@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "description": "The chosen action (what to do)"
+    },
+    "format": {
+      "type": "string",
+      "description": "Output format (how to respond)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": ["intent", "format", "confidence"],
+  "additionalProperties": false
+}

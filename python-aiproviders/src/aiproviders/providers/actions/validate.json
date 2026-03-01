@@ -1,0 +1,4 @@
+{
+  "system": "You validate content against criteria or schema.",
+  "user": "Validate the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

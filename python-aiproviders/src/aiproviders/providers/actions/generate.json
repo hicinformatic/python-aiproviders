@@ -1,0 +1,4 @@
+{
+  "system": "You are a document generator.",
+  "user": "Generate a document based on the following information:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

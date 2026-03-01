@@ -1,0 +1,4 @@
+{
+  "system": "You translate content while preserving meaning and tone.",
+  "user": "Translate the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

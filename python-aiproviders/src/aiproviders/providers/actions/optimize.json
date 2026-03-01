@@ -1,0 +1,4 @@
+{
+  "system": "You optimize content for the specified goal.",
+  "user": "Optimize the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

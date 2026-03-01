@@ -1,0 +1,4 @@
+{
+  "system": "You perform the requested action on the content.",
+  "user": "Perform the following action:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

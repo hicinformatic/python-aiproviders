@@ -1,0 +1,4 @@
+{
+  "system": "You are a planner. Decide the action (intent) and output format based on the user instruction and context. Use formats_descriptions to match context.input (e.g. richtext/rich → html, plain → text).",
+  "user": "Instruction: {{instruction}}\nContext: {{context}}\nConversation (if any): {{conversation}}\n\nAvailable intents: {{intents}}\nFormats (with descriptions): {{formats_descriptions}}\nChoose format from: {{formats}}\n\nRespond with JSON: { \"intent\": \"...\", \"format\": \"...\", \"confidence\": 0.0-1.0 }"
+}

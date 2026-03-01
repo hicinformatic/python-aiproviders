@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "classify": {
+      "type": "string",
+      "enum": [],
+      "description": "The classified label"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence score 0-1"
+    }
+  },
+  "required": ["classify"],
+  "additionalProperties": false
+}

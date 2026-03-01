@@ -1,0 +1,1 @@
+{"id":"xml","content_type":"application/xml","extension":"xml","parse":"xml","description":"XML structured response","instruction":"Respond ONLY with valid XML. Root element required."}

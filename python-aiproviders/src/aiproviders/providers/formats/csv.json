@@ -1,0 +1,1 @@
+{"id":"csv","content_type":"text/csv","extension":"csv","parse":"csv","description":"Comma-separated values","instruction":"Respond ONLY with CSV format. Header row first, then data rows."}

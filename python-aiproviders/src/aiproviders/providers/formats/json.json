@@ -1,0 +1,1 @@
+{"id":"json","content_type":"application/json","extension":"json","parse":"json","description":"JSON structured response","instruction":"Respond ONLY with valid JSON matching the provided schema."}

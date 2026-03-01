@@ -1,0 +1,4 @@
+{
+  "system": "You analyze content and provide structured insights.",
+  "user": "Analyze the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

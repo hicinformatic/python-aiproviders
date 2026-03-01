@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "translation": {"type": "string", "description": "Translated content"},
+    "result": {"description": "Translation result"},
+    "next": {"type": "string", "description": "Next instruction"}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}

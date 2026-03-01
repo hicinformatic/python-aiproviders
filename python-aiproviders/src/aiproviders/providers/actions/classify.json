@@ -1,0 +1,4 @@
+{
+  "system": "You are a classifier.",
+  "user": "Classify the following instruction into exactly one of these labels.\n\nInstruction: {{instruction}}\nLabels: {{labels}}"
+}

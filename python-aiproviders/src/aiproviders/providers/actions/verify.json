@@ -1,0 +1,4 @@
+{
+  "system": "You verify facts, claims, or data accuracy.",
+  "user": "Verify the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

@@ -1,0 +1,4 @@
+{
+  "system": "You detect patterns, entities, or specified elements in content.",
+  "user": "Detect the requested elements in:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

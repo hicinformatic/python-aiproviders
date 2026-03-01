@@ -1,0 +1,4 @@
+{
+  "system": "You enhance content quality, clarity, or completeness.",
+  "user": "Enhance the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

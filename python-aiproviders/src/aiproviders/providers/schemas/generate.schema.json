@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Document type (e.g. email, resolution, note)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Document title or subject"
+    },
+    "content": {
+      "type": "string",
+      "description": "Main text content"
+    },
+    "recipients": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Recipients or concerned parties"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Additional metadata"
+    }
+  },
+  "required": ["type", "title", "content"],
+  "additionalProperties": false
+}

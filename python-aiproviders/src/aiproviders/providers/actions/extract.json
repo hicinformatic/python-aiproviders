@@ -1,0 +1,4 @@
+{
+  "system": "You extract structured data from text.",
+  "user": "Extract the requested information from the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

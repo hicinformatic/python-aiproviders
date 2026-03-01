@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="9.5 0.5 13 13">
+  <defs>
+    <clipPath id="octagon-clip">
+      <!-- Inset pour rester à l'intérieur de la bordure (stroke) -->
+      <path transform="translate(16,7) scale(0.85) translate(-16,-7)" 
+            d="M16,1.5 L19.9,3.1 L21.5,7 L19.9,10.9 L16,12.5 L12.1,10.9 L10.5,7 L12.1,3.1 Z"/>
+    </clipPath>
+  </defs>
+  <!-- Octogone régulier -->
+  <path d="M16,1.5 L19.9,3.1 L21.5,7 L19.9,10.9 L16,12.5 L12.1,10.9 L10.5,7 L12.1,3.1 Z" 
+        fill="#1a1a2e" stroke="#5a7a9a" stroke-width="1"/>
+  <g clip-path="url(#octagon-clip)">
+    <text x="16" y="4" font-family="ui-monospace, monospace" font-size="2.6" 
+          fill="#7ee8fa" text-anchor="middle" font-weight="500">
+      <tspan x="16" dy="0">10011101</tspan>
+      <tspan x="16" dy="0.9em">11010001</tspan>
+      <tspan x="16" dy="0.9em">10011101</tspan>
+      <tspan x="16" dy="0.9em">11010001</tspan>
+    </text>
+  </g>
+</svg>

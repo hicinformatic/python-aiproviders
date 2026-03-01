@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "message": {"type": "string", "description": "Chat response"},
+    "result": {"description": "Chat result"},
+    "next": {"type": "string", "description": "Next instruction"}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}

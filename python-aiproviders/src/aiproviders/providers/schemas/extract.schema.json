@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "extracted": {"type": "object"},
+    "result": {},
+    "next": {"type": "string"}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}

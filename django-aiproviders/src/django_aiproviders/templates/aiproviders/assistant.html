@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test widget aiproviders</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/aiproviders.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aiproviders-widget.css' %}">
+    <script>window.AIPROVIDERS_WIDGET_URL = "{% url 'aiproviders_widget' %}"; window.AIPROVIDERS_PROMPT_URL = "{% url 'aiproviders_prompt' %}";</script>
+    <script src="{% static 'js/aiproviders.js' %}"></script>
+</head>
+<body>
+    <div class="aiproviders-assistant">
+        <div class="aiproviders-menu">
+            <div class="aiproviders-menu-items">
+                <div class="aiproviders-menu-item">
+                    <span class="aiproviders-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    Nouvelle discussion
+                </div>
+                <div class="aiproviders-menu-item">
+                    <span class="aiproviders-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                    Rechercher
+                </div>
+            </div>
+            <hr>
+            <small>Historique</small>
+            <div class="aiproviders-history">
+                <div class="aiproviders-history-item">
+                    <span class="aiproviders-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+                    <span class="aiproviders-history-content">
+                        <span>Discussion 1</span>
+                        <small>2026-02-25 10:00</small>
+                    </span>
+                </div>
+                <div class="aiproviders-history-item">
+                    <span class="aiproviders-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+                    <span class="aiproviders-history-content">
+                        <span>Discussion 2</span>
+                        <small>2026-02-25 10:00</small>
+                    </span>
+                </div>
+                <div class="aiproviders-history-item">
+                    <span class="aiproviders-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+                    <span class="aiproviders-history-content">
+                        <span>Discussion 3</span>
+                        <small>2026-02-25 10:00</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="aiproviders-active">
+
+            <div class="aiproviders-active-widget">
+                {% include "aiproviders/widget.html" %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

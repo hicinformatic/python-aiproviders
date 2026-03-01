@@ -1,0 +1,170 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Prompt" %} - AIProviders</title>
+    <link rel="stylesheet" href="{% static 'css/aiproviders.css' %}">
+    <style>
+        .prompt-page { max-width: 900px; margin: 0 auto; padding: 24px; }
+        .prompt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .prompt-header h1 { margin: 0; }
+        .prompt-form { margin-bottom: 24px; }
+        .prompt-form-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+        .prompt-form label { display: block; margin-bottom: 4px; font-weight: 500; }
+        .prompt-form input[type="text"], .prompt-form select { padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; }
+        .prompt-form button { padding: 8px 16px; border-radius: 6px; border: none; background: #136F63; color: #fff; cursor: pointer; }
+        .prompt-result { background: #f5f5f5; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+        .prompt-result-header { font-weight: bold; margin-bottom: 8px; color: #136F63; }
+        .prompt-result-content { white-space: pre-wrap; }
+        .prompt-error { color: #c00; }
+    </style>
+</head>
+<body>
+    <div class="prompt-page">
+        <div class="prompt-header">
+            <h1>{% trans "Prompt" %}</h1>
+            <div>
+                {% if query or backend or first %}
+                <a hrla reponse ressemble a ca {
+                    "Result": {
+                      "content": "2",
+                      "format": "text",
+                      "usage": {
+                        "input_tokens": 42,
+                        "output_tokens": 2,
+                        "total_tokens": 44,
+                        "total_cost": 0.0
+                      }
+                    },
+                    "raw": {
+                      "result": {
+                        "content": "2",
+                        "format": "text",
+                        "usage": {
+                          "input_tokens": 42,
+                          "output_tokens": 2,
+                          "total_tokens": 44,
+                          "total_cost": 0.0
+                        }
+                      },
+                      "steps": [
+                        {
+                          "step": 1,
+                          "intent": "chat",
+                          "format": "text",
+                          "result": {
+                            "content": "2",
+                            "format": "text",
+                            "usage": {
+                              "input_tokens": 42,
+                              "output_tokens": 2,
+                              "total_tokens": 44,
+                              "total_cost": 0.0
+                            }
+                          }
+                        }
+                      ],
+                      "memory": {
+                        "history": [
+                          {
+                            "intent": "chat",
+                            "format": "text",
+                            "instruction": "1 + 1 ca fait combien?",
+                            "result": {
+                              "content": "2",
+                              "format": "text",
+                              "usage": {
+                                "input_tokens": 42,
+                                "output_tokens": 2,
+                                "total_tokens": 44,
+                                "total_cost": 0.0
+                              }
+                            }
+                          }
+                        ],
+                        "state": {}
+                      },
+                      "usage": {
+                        "input_tokens": 268,
+                        "output_tokens": 29,
+                        "total_tokens": 297,
+                        "total_cost": 0.0,
+                        "steps": [
+                          {
+                            "intent": "planner",
+                            "input_tokens": 226,
+                            "output_tokens": 27,
+                            "total_tokens": 253,
+                            "cost": 0.0
+                          },
+                          {
+                            "intent": "chat",
+                            "input_tokens": 42,
+                            "output_tokens": 2,
+                            "total_tokens": 44,
+                            "cost": 0.0
+                          }
+                        ]
+                      }
+                    }
+                  } tu peux améliorer cette partie@prompt_list.html (66-79) ef="?{% if query %}q={{ query|urlencode }}{% endif %}{% if backend %}{% if query %}&{% endif %}bck={{ backend|urlencode }}{% endif %}{% if first %}{% if query or backend %}&{% endif %}first=1{% endif %}&format=json">{% trans "View in JSON" %}</a>
+                {% else %}
+                <a href="?format=json">{% trans "View in JSON" %}</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <form method="get" class="prompt-form">
+            <div class="prompt-form-row">
+                <div>
+                    <label for="q">{% trans "Instruction" %}</label>
+                    <input type="text" id="q" name="q" value="{{ query }}" placeholder="Posez une question...">
+                </div>
+                <div>
+                    <label for="bck">{% trans "Provider" %}</label>
+                    <select id="bck" name="bck">
+                        <option value="">{% trans "All providers" %}</option>
+                        {% for provider in providers %}
+                        <option value="{{ provider.name }}" {% if backend == provider.name %}selected{% endif %}>{{ provider.display_name|default:provider.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <div>
+                        <input type="checkbox" id="first" name="first" value="1" {% if first %}checked{% endif %}>
+                        <label for="first" style="display: inline;">{% trans "First provider only" %}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-form-row">
+                <button type="submit">{% trans "Run" %}</button>
+                {% if query and count > 0 %}<span>{{ count }} {% trans "result" %}{{ count|pluralize }}</span>{% endif %}
+            </div>
+        </form>
+
+        {% if results %}
+            {% for r in results %}
+            <div class="prompt-result">
+                <div class="prompt-result-header">{{ r.provider_name }} ({{ r.response_time }}s)</div>
+                {% if r.error %}
+                <div class="prompt-error">{{ r.error }}</div>
+                {% elif r.content %}
+                <div class="prompt-result-content">{{ r.content }}</div>
+                {% if r.usage %}
+                <div class="prompt-result-usage">
+                    {{ r.usage.input_tokens|default:0 }} in / {{ r.usage.output_tokens|default:0 }} out
+                    {% if r.usage.total_cost %}<span class="prompt-result-cost"> · {{ r.usage.total_cost }}€</span>{% endif %}
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% elif query %}
+            <p>{% trans "No results" %}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

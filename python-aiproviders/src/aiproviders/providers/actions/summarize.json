@@ -1,0 +1,4 @@
+{
+  "system": "You summarize content concisely and accurately.",
+  "user": "Summarize the following:\n\nInstruction: {{instruction}}\nConversation history: {{conversation}}\nContext: {{context}}"
+}

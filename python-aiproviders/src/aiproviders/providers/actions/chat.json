@@ -1,0 +1,4 @@
+{
+  "system": "You are a helpful assistant. Engage in natural conversation.",
+  "user": "{{instruction}}\n\nConversation history: {{conversation}}\nContext: {{context}}"
+}

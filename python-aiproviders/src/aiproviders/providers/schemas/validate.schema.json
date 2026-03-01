@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "valid": {"type": "boolean", "description": "Validation outcome"},
+    "result": {"description": "Validation result"},
+    "next": {"type": "string", "description": "Next instruction"}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}

@@ -1,0 +1,124 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+.aiproviders-assistant {
+    display: flex;
+    min-height: 100%;
+}
+
+.aiproviders-menu {
+    background-color: #136F63;;
+    color: #fff;
+    padding: 16px;
+    min-height: 100%;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.aiproviders-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.aiproviders-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.aiproviders-menu .aiproviders-icon {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.aiproviders-menu .aiproviders-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.aiproviders-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.aiproviders-menu hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 12px 0;
+}
+
+.aiproviders-menu > small {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.aiproviders-history {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.aiproviders-history-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.aiproviders-history-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.aiproviders-history-item .aiproviders-icon {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.aiproviders-history-item .aiproviders-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.aiproviders-history-content {
+    min-width: 0;
+}
+
+.aiproviders-history-content span {
+    display: block;
+    font-size: 14px;
+}
+
+.aiproviders-history-content small {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.aiproviders-active {
+    background-color: #2a8f81;
+    min-height: 100%;
+    flex: 1;
+}
+
+.aiproviders-active > .aiproviders-active-widget {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+}

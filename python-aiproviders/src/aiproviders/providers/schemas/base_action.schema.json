@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "next": {
+      "type": "string",
+      "description": "Next instruction to continue the chain, if any"
+    },
+    "result": {
+      "description": "Result of the action"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["done", "continue"],
+      "description": "Whether the agent should stop or continue"
+    }
+  },
+  "additionalProperties": true
+}

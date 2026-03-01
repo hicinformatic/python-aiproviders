@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "detected": {"type": "array", "description": "Detected elements"},
+    "result": {"description": "Detection result"},
+    "next": {"type": "string", "description": "Next instruction"}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}

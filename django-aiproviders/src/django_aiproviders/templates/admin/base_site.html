@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/aiproviders-widget.css' %}">
+  <script>window.AIPROVIDERS_WIDGET_URL = "{% url 'aiproviders_widget' %}"; window.AIPROVIDERS_PROMPT_URL = "{% url 'aiproviders_prompt' %}";</script>
+  <script src="{% static 'js/aiproviders.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+tatatata
+{% endblock %}

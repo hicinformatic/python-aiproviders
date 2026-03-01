@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {"description": "Action result"},
+    "next": {"type": "string", "description": "Next instruction"},
+    "status": {"type": "string", "enum": ["done", "continue"]}
+  },
+  "required": ["result"],
+  "additionalProperties": true
+}
